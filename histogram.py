@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
+
 class Histogram():
     def __init__ (self):
         self.img = cv2.imread("cicek.png")
@@ -13,6 +14,7 @@ class Histogram():
             plt.plot(hist, color = col)
             plt.title("Orjinal Renkli Seviye Histogram ")
         self.renkli_equ()
+
     def renkli_equ(self):
         b, g, r = cv2.split(self.img)
         equal_b = cv2.equalizeHist(b)
